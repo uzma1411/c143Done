@@ -37,7 +37,7 @@ export default class HomeScreen extends Component {
   };
 
   likedMovie = () => {
-    const url = "http://localhost:5000/liked-movie";
+    const url = "http://localhost:5000/like";
     axios
       .post(url)
       .then(response => {
@@ -49,7 +49,7 @@ export default class HomeScreen extends Component {
   };
 
   unlikedMovie = () => {
-    const url = "http://localhost:5000/unliked-movie";
+    const url = "http://localhost:5000/notlike";
     axios
       .post(url)
       .then(response => {
@@ -61,7 +61,7 @@ export default class HomeScreen extends Component {
   };
 
   notWatched = () => {
-    const url = "http://localhost:5000/did-not-watch";
+    const url = "http://localhost:5000/notwatch";
     axios
       .post(url)
       .then(response => {
@@ -112,7 +112,6 @@ export default class HomeScreen extends Component {
                 <View style={{ flex: 0.3 }}>
                   <AirbnbRating
                     count={10}
-                    reviews={["", "", "", "", ""]}
                     defaultRating={rating}
                     isDisabled={true}
                     size={RFValue(25)}
